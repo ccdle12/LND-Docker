@@ -12,10 +12,6 @@ RUN apt-get update \
 ENV GOPATH=/root/gocode
 ENV PATH=$PATH:$GOPATH/bin
 
-# Set LND and BTCD Node Env Variables.
-ENV BTCD_RPCUSER=$BTCD_RPCUSER
-ENV BTCD_RPCPASS=$BTCD_RPCPASS
-
 # Expose Ports.
 ## LND RPC Port, REST Port.
 EXPOSE 10009 8080
