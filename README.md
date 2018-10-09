@@ -32,10 +32,16 @@ Rename `.env.example` to `.env`.
 
 Add values to the environment variables:
 
+`DATADIR_MNT` can be left blank and will use the default path.
+If you are mounting the blockchain data, specify the absolute path.
+
 ```
 # BTCD
 BTCD_RPCUSER=kek
 BTCD_RPCPASS=kek
+
+# Data Directory Mount Path
+DATADIR_MNT=/mnt/datadir
 ```
 
 ### 3. Setup lnd.conf
