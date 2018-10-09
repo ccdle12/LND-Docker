@@ -23,7 +23,7 @@ RUN git clone https://github.com/lightningnetwork/lnd \
 ### 1. Clone the github project
 
 ```
-$ git clone <>
+$ git clone https://github.com/ccdle12/LND-Docker
 ```
 
 ### 2. Setup .env
