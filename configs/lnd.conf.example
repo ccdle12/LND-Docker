@@ -1,0 +1,18 @@
+# LND Node Settings
+debuglevel=info
+listen=0.0.0.0:9735
+externalip=<YOUR EXTERNAL IP>
+alias=<YOUR ALIAS>
+color=#FF8106
+maxpendingchannels=5
+
+# Bitcoin Node Settings
+bitcoin.testnet=1
+bitcoin.active=1
+bitcoin.node=btcd
+btcd.rpcuser=$BTCD_RPCUSER
+btcd.rpcpass=$BTCD_RPCPASS
+
+# RPC and Rest Ports
+rpclisten=0.0.0.0:10009
+restlisten=0.0.0.0:8080
