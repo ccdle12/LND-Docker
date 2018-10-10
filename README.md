@@ -76,18 +76,18 @@ Currently this will only write blockchain data to the persistent storage.
 
 With Persistent Storage:
 ```
-$ ./run-docker.sh /mnt/datadir
+$ ./lnd.sh run /mnt/datadir
 ```
 
 Without Persistent Storage:
 ```
-$ ./run-docker.sh
+$ ./lnd.sh run
 ```
 
 ### 5. Attach into LND Container
 
 ```
-$ ./attach-lnd.sh
+$ ./lnd.sh attach
 ```
 
 ### 6. Create a wallet
@@ -105,5 +105,5 @@ $ lncli getinfo
 ## Updating the Node
 
 ```
-$ ./update.sh
+$ ./lnd.sh update
 ```
