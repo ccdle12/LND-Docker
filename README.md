@@ -32,8 +32,7 @@ Rename `.env.example` to `.env`.
 
 Add values to the environment variables:
 
-`DATADIR_MNT` can be left blank and will use the default path.
-If you are mounting the blockchain data, specify the absolute path.
+`DATADIR_MNT` should remain as the default setting. This will provide an option to write the ledger data to a persistent storage.
 
 ```
 # BTCD
@@ -41,7 +40,7 @@ BTCD_RPCUSER=kek
 BTCD_RPCPASS=kek
 
 # Data Directory Mount Path
-DATADIR_MNT=/mnt/datadir
+DATADIR_MNT=/mnt/btcd
 ```
 
 ### 3. Setup lnd.conf
@@ -72,7 +71,15 @@ restlisten=0.0.0.0:8080
 ```
 
 ### 4. Run the Dockerfile
+The Dockerfile can be run with an optional path to a persistent storage on the host machine. 
+Currently this will only write blockchain data to the persistent storage.
 
+With Persistent Storage:
+```
+$ ./run-docker.sh /mnt/datadir
+```
+
+Without Persistent Storage:
 ```
 $ ./run-docker.sh
 ```
