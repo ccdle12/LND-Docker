@@ -1,6 +1,11 @@
 # LND Docker
 A project that will run an LND Node and BTCD Node using Docker.
 
+## Host Machine Requirements
+
+* Git
+* Docker
+
 ## Background
 This project is an LND deployment for my own LND fork. This is for me to quickly spin up LND Nodes and experiment with my own breaking changes. This version of LND may not be up to date or may have breaking changes USE AT YOUR OWN RISK.
 
