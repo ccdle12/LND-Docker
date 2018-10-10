@@ -17,7 +17,7 @@ function attach() {
     docker exec -ti lnd-node /bin/bash
 }
 
-# Update will attach in the container, update the master the branch and rebuild lnd.
+# Update will attach in the container, update the master branch and rebuild lnd.
 function update() {
     docker exec -ti lnd-node /bin/bash -c "
         cd gocode/src/github.com/lightningnetwork/lnd \
@@ -27,7 +27,7 @@ function update() {
     "
 }
 
-# Evaluate the first arg as function call
+# Evaluate the first arg as function call.
 cmd="$1"
 shift
 eval "$cmd $@"
