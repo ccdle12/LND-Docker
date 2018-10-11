@@ -8,7 +8,8 @@ echo 'alias lncli="lncli --macaroonpath /root/.lnd/data/chain/bitcoin/testnet/ad
 . ~/.bashrc
 
 # Run btcd.
-btcd &
+## Source the script and run it in the same process.
+. /root/scripts/run-btcd.sh &
 
 # Run LND in testnet.
 lnd start &
