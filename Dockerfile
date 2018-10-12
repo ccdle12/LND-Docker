@@ -4,6 +4,7 @@ FROM ubuntu:latest
 RUN apt-get update \
     && apt-get -y upgrade \
     && apt install make \
+    && apt install net-tools \
     && apt-get install git -y \
     && apt-get install golang-1.10-go -y \
     && ln -s /usr/lib/go-1.10/bin/go /usr/local/bin/go
