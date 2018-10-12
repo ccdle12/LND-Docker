@@ -9,7 +9,7 @@ function build() {
 # Run the container.
 function run() {
     build
-    docker run -d --env-file=.env -p 10009:10009 -p 8080:8080 -p 8334:8334 -p 8337:8337 -v $1:/mnt/btcd --name lnd-node lnd
+    docker run -d --env-file=.env -p 10009:10009 -p 8080:8080 -p 8334:8334 -p 8337:8337 -p 9735:9735 -v $1:/mnt/btcd --name lnd-node lnd
 }
 
 # Attach into the LND container.
