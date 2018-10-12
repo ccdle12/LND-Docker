@@ -27,6 +27,13 @@ function update() {
     "
 }
 
+# $1 = Path to host persistent storage.
+# Restart the node.
+function restart() {
+   docker stop lnd-node && docker rm lnd-node
+   run $1
+}
+
 # Evaluate the first arg as function call.
 cmd="$1"
 shift
