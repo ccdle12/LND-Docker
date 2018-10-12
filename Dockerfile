@@ -13,8 +13,8 @@ ENV GOPATH=/root/gocode
 ENV PATH=$PATH:$GOPATH/bin
 
 # Expose Ports.
-## LND RPC Port, REST Port.
-EXPOSE 10009 8080
+## LND RPC Port, REST Port, P2P Port.
+EXPOSE 10009 8080 9735
 
 ## BTCD Ports.
 EXPOSE 8334 8337
