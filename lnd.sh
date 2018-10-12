@@ -8,8 +8,12 @@ function build() {
 # $1 = Path to host persistent storage.
 # Run the container.
 function run() {
+    # Folders to persist graph and chain data.
+    $graph = "/lnd/graph/"
+    $chain = "/lnd/chain/"
+
     build
-    docker run -d --env-file=.env -p 10009:10009 -p 8080:8080 -p 8334:8334 -p 8337:8337 -p 9735:9735 -v $1:/mnt/btcd --name lnd-node lnd
+    docker run -d --env-file=.env -p 10009:10009 -p 8080:8080 -p 8334:8334 -p 8337:8337 -p 9735:9735 -v $1:/mnt/btcd -v $1/lnd:/root/.lnd/data/ --name lnd-node lnd
 }
 
 # Attach into the LND container.
