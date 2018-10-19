@@ -12,8 +12,11 @@ function run() {
     $graph = "/lnd/graph/"
     $chain = "/lnd/chain/"
 
+    # Run the build function.
     build
-    docker run -d --env-file=.env -p 10009:10009 -p 8080:8080 -p 8334:8334 -p 8337:8337 -p 9735:9735 -v $1:/mnt/btcd -v $1/lnd:/root/.lnd/data/ --name lnd-node lnd
+
+    # Run the docker image.
+    docker run -d --env-file=.env -p 10009:10009 -p 8080:8080 -p 8334:8334 -p 8337:8337 -p 9735:9735 -v $1:/mnt/blockstorage --name lnd-node lnd
 }
 
 # Attach into the LND container.
