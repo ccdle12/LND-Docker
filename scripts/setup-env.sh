@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# Adding alias variables to .bashrc.
+# Create aliases for btc and lncli.
 echo 'alias btc="btcctl --testnet"' >> /root/.bashrc
-echo 'alias lncli="lncli --macaroonpath /root/.lnd/data/chain/bitcoin/testnet/admin.macaroon"' >> /root/.bashrc
+echo 'alias lncli="lncli --n testnet"' >> /root/.bashrc
 
 # Source bash profile.
 . ~/.bashrc
