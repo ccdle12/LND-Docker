@@ -7,7 +7,6 @@ color=#FF8106
 maxpendingchannels=5
 
 # Bitcoin Node Settings
-bitcoin.testnet=1
 bitcoin.active=1
 bitcoin.node=btcd
 btcd.rpcuser=$BTCD_RPCUSER

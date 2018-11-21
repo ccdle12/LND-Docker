@@ -1,13 +1,10 @@
-FROM ubuntu:latest
+FROM golang:1.11-alpine
 
 # Set up OS envrinment.
-RUN apt-get update \
-    && apt-get -y upgrade \
-    && apt install make \
-    && apt install net-tools \
-    && apt-get install git -y \
-    && apt-get install golang-1.10-go -y \
-    && ln -s /usr/lib/go-1.10/bin/go /usr/local/bin/go
+RUN apk update \
+    && apk add git \
+    && apk add --no-cache make gcc musl-dev linux-headers \
+    && apk add net-tools
 
 # Set Go Env Variables.
 ENV GOPATH=/root/gocode
@@ -31,10 +28,8 @@ COPY ./configs/lnd.conf ./lnd.conf
 # Set lightning network directory.
 WORKDIR /root/gocode/src/github.com/lightningnetwork
 
-# NOTE: this is my fork, it may not be up to date or may have breaking changes.
-# Replace the github address with the official address.
-# USE AT YOUR OWN RISK
-RUN git clone https://github.com/ccdle12/lnd.git \
+# Get the LND project.
+RUN git clone https://github.com/lightningnetwork/lnd.git \
     && cd lnd \
     && go get -u github.com/golang/dep/cmd/dep \
     && make && make install \

@@ -1,11 +1,10 @@
-#!/bin/bash
+#!/bin/sh
 
 # Create aliases for btc and lncli.
-echo 'alias btc="btcctl --testnet"' >> /root/.bashrc
-echo 'alias lncli="lncli --n testnet"' >> /root/.bashrc
+echo 'alias btc="btcctl"' >> /root/.bashrc
 
 # Source bash profile.
-. ~/.bashrc
+. ~/.bashrc &
 
 # Run btcd.
 ## Source the script and run it in the same process.
@@ -15,4 +14,4 @@ echo 'alias lncli="lncli --n testnet"' >> /root/.bashrc
 lnd start &
 
 # Keep container open.
-sleep infinity;
+tail -f /dev/null

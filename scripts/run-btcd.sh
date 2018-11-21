@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 POST_INIT_SYNC_DELAY=60
 POLL_DELAY=60

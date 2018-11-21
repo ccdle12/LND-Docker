@@ -1,0 +1,21 @@
+version: '2'
+services:
+  node:
+    container_name: lnd
+    command: /root/scripts/setup-env.sh
+    build: ./
+    volumes:
+      - ./scripts:/root/scripts:ro
+    environment:
+      - DATADIR_MNT=$DATADIR_MNT
+      - BTCD_RPCUSER=$BTCD_RPCUSER
+      - BTCD_RPCPASS=$BTCD_RPCPASS
+    ports:
+      # LND PORTS
+      - 10009:10009
+      - 8080:8080
+      - 9735:9735
+
+      # BTC PORTS
+      - 8334:8334
+      - 8337:8337
